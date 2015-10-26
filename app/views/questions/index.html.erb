@@ -1,9 +1,12 @@
-<h1>Questions and shit</h1>
-<p><%= link_to "Add Question", new_question_path() %></p>
+<h1>Questions and <strong>Shit</strong></h1>
 
+<div class="jumbotron">
   <%= @question.content %>
   <br>
-    <%= link_to @question.answers.first.content, question_path(@question, vote_1:true), remote: true, class: 'answer1', method: 'patch' %> || <%= link_to @question.answers.last.content, question_path(@question, vote_2:true), remote: true, class: 'answer2', method: 'patch' %>
+  <br>
+    <%= link_to @question.answers.first.content, question_path(@question, vote_1:true), remote: true, class: 'answer1 btn btn-danger', method: 'patch' %> || <%= link_to @question.answers.last.content, question_path(@question, vote_2:true), remote: true, class: 'answer2 btn btn-danger', method: 'patch' %>
+  <br>
   <br>
 
 <span id='next-question'></span>
+</div>
