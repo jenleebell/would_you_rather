@@ -1,0 +1,9 @@
+<h1>Questions and shit</h1>
+<p><%= link_to "Add Question", new_question_path() %></p>
+
+<% @questions.each do |question| %>
+  <%= question.content %>
+  <br>
+    <%= question.answers.first.content %> || <%= question.answers.last.content %>
+  <br>
+<% end %>

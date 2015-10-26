@@ -1,0 +1,10 @@
+<%= form_tag questions_path %>
+  <%= label_tag :content %>
+  <br>
+  <%= text_field_tag :content, nil, class: "form-control"  %>
+  <%= label_tag :answer_1 %>
+  <%= text_field_tag :answer_1 %>
+  <%= label_tag :answer_2 %>
+  <%= text_field_tag :answer_2 %>
+
+  <%= submit_tag 'Submit', class:'btn btn-primary' %>
