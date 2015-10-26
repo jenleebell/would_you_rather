@@ -4,6 +4,6 @@
 <% @questions.each do |question| %>
   <%= question.content %>
   <br>
-    <%= question.answers.first.content %> || <%= question.answers.last.content %>
+    <%= link_to question.answers.first.content, edit_question_path(question, vote_1:true) %> || <%= link_to question.answers.last.content, edit_question_path(question, vote_2:true) %>
   <br>
 <% end %>
