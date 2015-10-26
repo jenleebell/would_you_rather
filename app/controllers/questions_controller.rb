@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @question = Question.all.sample
   end
 
   def new
@@ -19,18 +19,24 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
+  def update
     @question = Question.find(params[:id])
     answer_1 = @question.answers.first
     answer_2 = @question.answers.last
     if params[:vote_1]
       new_vote_1 = answer_1.votes + 1
       answer_1.update(votes: new_vote_1)
-      redirect_to questions_path
+      respond_to do |format|
+        format.html { redirect_to questions_path }
+        format.js
+      end
     elsif params[:vote_2]
       new_vote_2 = answer_2.votes + 1
       answer_2.update(votes: new_vote_2)
-      redirect_to questions_path
+      respond_to do |format|
+        format.html { redirect_to questions_path }
+        format.js
+      end
     end
   end
 

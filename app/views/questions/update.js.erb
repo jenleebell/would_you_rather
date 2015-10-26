@@ -1,0 +1,3 @@
+$('.answer1').hide().after('<%= @question.answers.first.percentage %>%');
+$('.answer2').hide().after('<%= @question.answers.last.percentage %>%');
+$('#next-question').append('<%= link_to 'Next Question', questions_path %>')
