@@ -5,7 +5,45 @@
   border-radius: 0;
 }
 
-.jumbotron {
+.question {
   font-size: 150%;
   text-align: center;
+  color: #000;
+}
+
+.question {
+  .btn {
+    background-color: gray;
+    border: 0;
+    color: #fff;
+  }
+}
+
+body {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.comment-style {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  color: #000;
+  font-size: 125%;
+}
+
+.comment-button {
+  background-color: gray;
+  border: 0;
+  color: #fff;
+}
+
+.logo {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 200%;
+}
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
 }

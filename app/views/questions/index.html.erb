@@ -1,14 +1,16 @@
-<h1>Questions and <strong>Shit</strong></h1>
+<h1><span class="logo">Questions and <strong>Shit</strong></span></h1>
 
 <div class="jumbotron">
+  <div class="question">
   <%= @question.content %>
   <br>
   <br>
-    <%= link_to @question.answers.first.content, question_path(@question, vote_1:true), remote: true, class: 'answer1 btn btn-danger', method: 'patch' %> || <%= link_to @question.answers.last.content, question_path(@question, vote_2:true), remote: true, class: 'answer2 btn btn-danger', method: 'patch' %>
+    <%= link_to @question.answers.first.content, question_path(@question, vote_1:true), remote: true, class: 'answer1 btn btn-danger btn-lg', method: 'patch' %> || <%= link_to @question.answers.last.content, question_path(@question, vote_2:true), remote: true, class: 'answer2 btn btn-danger btn-lg', method: 'patch' %>
   <br>
   <br>
 
-<span id='next-question'></span>
+  <span id='next-question'></span>
+  </div>
 </div>
 
 <h3>Add a Comment</h3>
@@ -17,7 +19,7 @@
     <%= f.label :content %>
     <%= f.text_field :content, class: 'form-control', id: 'comment-box' %>
     <br>
-    <%= f.submit class:'btn btn-danger' %>
+    <%= f.submit class:'comment-button btn btn-default btn-lg' %>
   <% end %>
 <% else %>
   <p>You must be logged in to comment!</p>
