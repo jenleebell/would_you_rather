@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'chartkick'
 gem 'groupdate'
+gem 'devise'
 
 
 group :development do
