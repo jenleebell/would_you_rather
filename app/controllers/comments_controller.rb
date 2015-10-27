@@ -1,18 +1,24 @@
 class CommentsController < ApplicationController
   def create
+    # binding.pry
     @question = Question.find(params[:question_id])
     @comment = current_user.comments.create(comment_params)
     @question.comments.push(@comment)
     current_user.comments.push(@comment)
-    # binding.pry
-    redirect_to question_path(@question)
+    respond_to do |format|
+      format.html { redirect_to questions_path }
+      format.js
+    end
   end
 
   def destroy
     question = Question.find(params[:question_id])
-    comment = question.comments.find(params[:id])
-    comment.destroy
-    redirect_to question_path(question)
+    @comment = question.comments.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to questions_path }
+      format.js
+    end
+    @comment.destroy
   end
 
 private

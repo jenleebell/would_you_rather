@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @question = Question.all.sample
+    @comment = Comment.new
   end
 
   def new
