@@ -3,5 +3,5 @@
 <% if comment.user == current_user || current_user && current_user.admin %>
   <%= link_to "delete", question_comment_path(@question, comment), method: :delete, remote: true %>
 <% end %>
-written by <%= comment.user.email %><br><br>
+written by <%= comment.user.username %><br><br>
 </div>

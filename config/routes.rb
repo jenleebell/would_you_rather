@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :answers
     resources :comments
   end
+
+  resources :users, only: [:show]
 end
