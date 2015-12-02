@@ -1,3 +1,8 @@
-<h1>Add Question</h1>
-
+<h1>Add a Question</h1>
+<% if user_signed_in? %>
 <%= render 'form' %>
+<% else %>
+<p>
+  Want to write your own question? You must join us first! Sign up or login to get started.
+</p>
+<% end %>
