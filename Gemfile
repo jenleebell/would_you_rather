@@ -13,6 +13,7 @@ gem 'bcrypt-ruby'
 gem 'chartkick'
 gem 'groupdate'
 gem 'devise'
+gem 'seed_dump'
 
 
 group :development do
