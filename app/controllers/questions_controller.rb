@@ -8,6 +8,10 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
   def create
 # binding.pry
     @question = Question.new(content: params[:content])

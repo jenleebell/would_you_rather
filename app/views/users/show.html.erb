@@ -2,7 +2,7 @@
 
 <h3>Your questions:</h3>
 <% @user.questions.each do |question| %>
-  <%= question.content %>
+  <%= link_to question.content, question_path(question) %>
   <br>
 <% end %>
 
