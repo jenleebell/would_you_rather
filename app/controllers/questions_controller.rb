@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(content: params[:content])
     @question.answers.new(content: params[:answer_1])
     @question.answers.new(content: params[:answer_2])
+    current_user.questions.push(@question)
     if @question.save
       redirect_to questions_path
     else
